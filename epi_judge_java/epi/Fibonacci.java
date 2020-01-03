@@ -7,7 +7,19 @@ public class Fibonacci {
 
   public static int fibonacci(int n) {
     // TODO - you fill in here.
-    return -1;
+    if (n <= 1) {
+      return n;
+    }
+
+    int first = 0;
+    int second = 1;
+    int result = first + second;
+    for (int i = 2; i <= n; i++) {
+      result = first + second;
+      first = second;
+      second = result;
+    }
+    return result;
   }
 
   public static void main(String[] args) {
